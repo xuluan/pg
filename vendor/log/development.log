@@ -1,0 +1,98 @@
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (294.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying(255) NOT NULL) [0m
+  [1m[35m (31.6ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (3.8ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateProjects (20130307100022)
+  [1m[35m (0.5ms)[0m  BEGIN
+  [1m[36m (145.8ms)[0m  [1mCREATE TABLE "projects" ("id" serial primary key, "name" character varying(255), "desc" text, "started_at" timestamp, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (36.9ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130307100022')
+  [1m[36m (14.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+
+
+Started GET "/assets/rails.png" for 192.168.184.1 at 2013-03-08 10:30:45 +0800
+Connecting to database specified by database.yml
+Served asset /rails.png - 200 OK (39ms)
+
+
+Started GET "/projects" for 192.168.184.1 at 2013-03-08 10:30:52 +0800
+Processing by ProjectsController#index as HTML
+  [1m[36mProject Load (0.6ms)[0m  [1mSELECT "projects".* FROM "projects" [0m
+  Rendered projects/index.html.erb within layouts/application (13.1ms)
+Compiled projects.css  (63ms)  (pid 15909)
+Compiled scaffolds.css  (18ms)  (pid 15909)
+Compiled application.css  (156ms)  (pid 15909)
+Compiled jquery.js  (2ms)  (pid 15909)
+Compiled jquery_ujs.js  (0ms)  (pid 15909)
+Compiled projects.js  (6021ms)  (pid 15909)
+Compiled application.js  (6558ms)  (pid 15909)
+Completed 200 OK in 7756ms (Views: 7245.4ms | ActiveRecord: 109.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /application.css - 200 OK (11ms)
+
+
+Started GET "/assets/projects.css?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /projects.css - 200 OK (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /scaffolds.css - 200 OK (11ms)
+
+
+Started GET "/assets/projects.js?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /projects.js - 200 OK (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /jquery_ujs.js - 200 OK (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /jquery.js - 200 OK (8ms)
+
+
+Started GET "/assets/application.js?body=1" for 192.168.184.1 at 2013-03-08 10:31:00 +0800
+Served asset /application.js - 200 OK (24ms)
+
+
+Started GET "/projects/new" for 192.168.184.1 at 2013-03-08 10:31:02 +0800
+Processing by ProjectsController#new as HTML
+  Rendered projects/_form.html.erb (151.5ms)
+  Rendered projects/new.html.erb within layouts/application (210.9ms)
+Completed 200 OK in 225ms (Views: 217.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/projects" for 192.168.184.1 at 2013-03-08 10:31:10 +0800
+Processing by ProjectsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2zoPRzHuFMgvKQuTdUHPYP3mAPq56gpk87F04BLyjZQ=", "project"=>{"name"=>"a", "desc"=>"y", "started_at(1i)"=>"2013", "started_at(2i)"=>"3", "started_at(3i)"=>"8", "started_at(4i)"=>"02", "started_at(5i)"=>"31"}, "commit"=>"Create Project"}
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (53.2ms)[0m  [1mINSERT INTO "projects" ("created_at", "desc", "name", "started_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["created_at", Fri, 08 Mar 2013 02:31:10 UTC +00:00], ["desc", "y"], ["name", "a"], ["started_at", Fri, 08 Mar 2013 02:31:00 UTC +00:00], ["updated_at", Fri, 08 Mar 2013 02:31:10 UTC +00:00]]
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://192.168.184.128:3000/projects/1
+Completed 302 Found in 60ms (ActiveRecord: 54.8ms)
+
+
+Started GET "/projects/1" for 192.168.184.1 at 2013-03-08 10:31:10 +0800
+Processing by ProjectsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProject Load (1.1ms)[0m  [1mSELECT "projects".* FROM "projects" WHERE "projects"."id" = $1 LIMIT 1[0m  [["id", "1"]]
+  Rendered projects/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/projects" for 192.168.184.1 at 2013-03-08 10:31:13 +0800
+Processing by ProjectsController#index as HTML
+  [1m[35mProject Load (0.7ms)[0m  SELECT "projects".* FROM "projects" 
+  Rendered projects/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 0.7ms)
